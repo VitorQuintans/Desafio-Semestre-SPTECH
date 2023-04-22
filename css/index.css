@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Roboto&family=Roboto+Condensed&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container_menu_home {
+    width: 100vw;
+    height: 800px;
+    justify-content: center;
+    display: flex;
+}
+
+.container_menu {
+    background-color: rgba(255, 255, 255, 0.555);
+    width: 100vw;
+    height: 13%;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(200px);
+}
+
+.menu_conteudo{
+    width: 75%;
+    height: 100%;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+
+}
+
+.menu-itens {
+    display: flex;
+    align-items: center;
+}
+
+.menu-itens li a {
+    margin: 0 3vw;
+    align-items: center;
+    font-size: 16.81px;
+    font-weight: 600;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    list-style: none;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+#logo-empresa {
+    width: 5vw;
+}
+
+
+.container-conteudo-page {
+    background-image: url('../assets/background\ \(2\).jpg');
+    width: 100%;
+    height: 650px;
+    background-repeat: no-repeat;
+    filter: saturate(120%);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    position: relative;
+}
