@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Konkhmer+Sleokchher&family=Lato:wght@900&family=Righteous&family=Roboto&family=Roboto+Condensed&display=swap');
+
+/* Container Página */ 
+
+.container-page {
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/fifa-background-cadastro.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Formulário */
+
+.container-form-div {
+    display: flex;
+    width: 57%;
+    height: 82%;
+    background-color: aqua;
+    border-radius: 7%;
+}
+
+/* Conteudo individuais div form */
+
+#video-form {
+    width: 50%;
+    height: 100%;
+}
+
+#video-fifa{
+    width: 100%;
+    background-size: cover;
+
+}
+
+/* Titulo Login */
+.titulo-login-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+    flex-direction: column;
+    margin-top: 10%;
+}
+
+
+.form-container {
+    background-color: rgb(24, 24, 24);
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+}
+
+#form-conteudo {
+    /* background-color: blueviolet; */
+    display: flex;
+    padding-top: 7%;
+    flex-direction: column;
+}
+
+/* Textos Login estilos de fontes... */
+
+.font-login {
+    font-family: 'Konkhmer Sleokchher', Arial, Helvetica, sans-serif;
+    margin: 3% 0;
+    font-size: 15px;
+    color: white;
+    font-weight: 400;
+}
+
+#Login-page {
+    font-size: 24px;
+    font-family: 'Konkhmer Sleokchher', Arial, Helvetica, sans-serif;
+    overflow-y: hidden;
+    color: white;
+    font-weight: 500
+}
+
+/* Inputs Login */
+.input-login {
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    border-width: 100%;
+    padding-bottom: 2%;
+    outline: none;
+    margin-left: 3%;
+    background-color: transparent;
+    color: white;
+}
+
+
+/* Efeitos Especiais nos Inputs */
+.input-login:active , .input-login:focus {
+    border-bottom-color: rgb(255, 255, 255);
+    transition: 0.2s ease-in;
+}
+
+.input-login::placeholder {
+    color: white;
+    font-size: 13px;
+}
+
+
+/* Container Inputs */
+.inputs-containers-individual {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Icons Inputs login */
+
+.icons-inputs-login {
+    width: 1.5vw;
+    height: 2.8vh;
+
+}
+
+/* Botão Login */
+
+.div-botao {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+
+.btn-entrar-login {
+    width: 50%;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    outline: none;
+    border-width: 100%;
+    height: 5vh;
+    background-color: transparent;
+    color: white;
+}
+
+.btn-entrar-login:hover {
+    border: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    outline: none;
+    border-width: 100%;
+    height: 5vh;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}

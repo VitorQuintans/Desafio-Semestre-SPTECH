@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Roboto&family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Lato:wght@900&family=Righteous&family=Roboto&family=Roboto+Condensed&display=swap');
 
+/* ESTILIZAÇÃO DO SITE INTEIRO */
 
 * {
     margin: 0;
@@ -9,63 +10,12 @@
     scroll-behavior: smooth;
 }
 
-.container_menu_home {
-    width: 100vw;
-    height: 800px;
-    justify-content: center;
-    display: flex;
-}
 
-.container_menu {
-    background-color: rgba(255, 255, 255, 0.555);
-    width: 100vw;
-    height: 13%;
-    display: flex;
-    justify-content: center;
-    backdrop-filter: blur(200px);
-}
-
-.menu_conteudo{
-    width: 75%;
-    height: 100%;
-    overflow-y: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 0;
-
-}
-
-.menu-itens {
-    display: flex;
-    align-items: center;
-}
-
-.menu-itens li a {
-    margin: 0 3vw;
-    align-items: center;
-    font-size: 16.81px;
-    font-weight: 600;
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
-    list-style: none;
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    text-decoration: none;
-}
-
-
-#logo-empresa {
-    width: 5vw;
-}
-
-
+/* Pagina HOME */
 .container-conteudo-page {
-    background-image: url('../assets/background\ \(2\).jpg');
+    background-color: #191919;
     width: 100%;
-    height: 650px;
+    height: 550px;
     background-repeat: no-repeat;
     filter: saturate(120%);
     background-size: cover;
@@ -73,4 +23,63 @@
     justify-content: center;
     z-index: -1;
     position: relative;
+}
+
+/* CONTAINER CONTEÚDO */
+.container-conteudo{
+    display: flex;
+    width: 90%;
+    height: 100%;
+}
+
+/* CONTEUDO DA PAGINA HOME 'FIFA 2023' */
+
+.texto-fifa-home h1{
+    color: white;
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+
+.texto-fifa-home {
+    display: flex;
+    margin-top: 6%;
+    margin-left: 10%;
+    flex-direction: column;
+    z-index: 0;
+}
+
+/* Propriedades definidas individualmente a estes textos */
+
+#fifa-Text {
+    font-size: 150px;
+    padding: 0;
+    color: transparent;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 2px;
+}
+
+#home-2023 {
+    font-size: 140px;
+    padding: 0;
+    margin-top: -50px;
+    height: auto;
+    font-family: 'Righteous';
+}
+
+/* Imagem Bola */
+
+.bola_div {
+    width: auto;
+    height: min-content;
+    margin-top: 5%;
+    z-index: 1;
+    background-color: transparent;
+}
+
+#bola-img {
+    width: 350px;
+    height: 350px;
 }
