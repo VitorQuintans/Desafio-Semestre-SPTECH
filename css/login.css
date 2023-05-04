@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Konkhmer+Sleokchher&family=Lato:wght@900&family=Righteous&family=Roboto&family=Roboto+Condensed&display=swap');
 
+
+
 /* Container Página */ 
 
 .container-page {
@@ -11,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: hidden;
 }
 
 /* Container Formulário */
@@ -22,6 +25,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 /* Conteudo individuais div form */
