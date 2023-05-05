@@ -7,7 +7,7 @@
 .container-page {
     width: 100vw;
     height: 100vh;
-    background: url('../assets/fifa-background-cadastro.jpg');
+    background: url('../assets/background-login.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
