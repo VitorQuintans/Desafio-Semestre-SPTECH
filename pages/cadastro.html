@@ -10,9 +10,16 @@
     <link rel="stylesheet" href="../css/menu.css">
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/cadastro.js"></script>
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
+    <video autoplay loop muted id="video_background-container">
+        <source src="../assets/Video Background.mp4" id="video-background">
+    </video>
     <div class="container-page">
         <div class="container-form-div">
             <div id="container-img-form">
@@ -20,8 +27,9 @@
             </div>
             <div class="form-container">
                 <div class="titulo-login-div">
-                    <div class="voltar-btn-div"><a href="../index.html"><img src="../assets/botao-voltar.png" id="voltar-btn" alt=""></a></div>
-                    <img src="../assets/logo.png" alt="" id="logo-empresa" style="width: 8vw; height: 20vh;">
+                    <div class="voltar-btn-div"><a href="../index.html"><img src="../assets/botao-voltar.png"
+                                id="voltar-btn" alt=""></a></div>
+                    <img src="../assets/logo.png" alt="" id="logo-empresa" style="width: 8vw; height: 18vh;">
                     <h1 id="Login-page">Cadastro</h1>
                 </div>
                 <div class="form">
@@ -29,20 +37,27 @@
                         <h1 class="font-login">Usuário:</h1>
                         <div class="inputs-containers-individual">
                             <img src="../assets/user.png" alt="ImagemUser" class="icons-inputs-login">
-                            <input class="input-login" id="input-login-user" placeholder="Insira seu usuário..."><br>
+                            <input class="input-login" id="input_login_user" placeholder="Insira seu usuário..."><br>
                         </div>
                         <h1 class="font-login">Senha:</h1>
                         <div class="inputs-containers-individual">
                             <img src="../assets/password.png" alt="ImagemUser" class="icons-inputs-login">
-                            <input type="password" class="input-login" id="input-login-password"
+                            <input type="password" class="input-login" id="input_login_password"
                                 placeholder="Insira sua senha..."><br>
                         </div>
-                        <div class="div-botao"><button onclick="verficarLogin()"
-                                class="btn-entrar-login">Entrar</button></div>
-                    </form>
+                        <h1 class="font-login">Email:</h1>
+                        <div class="inputs-containers-individual">
+                            <img src="../assets/password.png" alt="ImagemUser" class="icons-inputs-login">
+                            <input type="text" class="input-login" id="input_login_email"
+                                placeholder="Insira seu email..."><br>
+                        </div>
                 </div>
+                <div class="div-botao"><button type="submit" onclick="cadastrar()"
+                        class="btn-entrar-login">Entrar</button></div>
+                </form>
             </div>
         </div>
+    </div>
     </div>
 </body>
 
