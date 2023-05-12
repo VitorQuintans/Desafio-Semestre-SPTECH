@@ -1,4 +1,5 @@
 
+
 function validacaoCampos() {
     var nome = input_login_user.value
     var senha = input_login_password.value
@@ -8,13 +9,12 @@ function validacaoCampos() {
         || email == undefined || nome == undefined || senha == undefined ||
         email == "" || nome == "" || senha == "") {
             // SE ESTIVER ALGUM CAMPO FALTANDO
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong!',
-                footer: '<a href="">Why do I have this issue?</a>'
-              })
-    }
+                 nome.style = 'border-bottom: 3px solid red;'
+                 senha.style = 'border-bottom: 3px solid red;'
+                 email.style = 'border-bottom: 3px solid red;'
+            //   swal('Ops' , 'Campos Vazios!' , 'error')
+     }
+
     else if (nome.length < 3) {
         span_erro_nome.innerHTML = "Oops! Parece que seu texto é muito curto."
         input.style.borderColor = 'red'
@@ -33,13 +33,12 @@ function validacaoCampos() {
         span.style.fontSize = '15px'
         span.style.marginTop = '12px'
     }
-}
-function validar_email() {
+    function validar_email() {
     var email = email_usuario.value
     var input = document.getElementById('email_usuario')
     var span = document.getElementById('campo_email')
     var span_email = document.getElementById('span_erro_email')
-
+    
     if (email.indexOf("@") == -1 || email.indexOf(".com") == -1 || email.length < 7) {
         span_erro_email.innerHTML = "Ops! Parece que seu email é inválido."
         input.style.borderColor = 'red'
@@ -48,7 +47,7 @@ function validar_email() {
         span.style.color = 'red'
         span.style.fontSize = '15px'
         span.style.marginTop = '12px'
-
+    
     }
     else {
         span_erro_email.innerHTML = ''
@@ -57,15 +56,15 @@ function validar_email() {
         span.style.fontSize = '15px'
         span.style.marginTop = '12px'
     }
-}
-function validar_senha() {
+    }
+    function validar_senha() {
     var senha = senha_usuario.value
     var input = document.getElementById('senha_usuario')
     var span = document.getElementById('campo_senha')
     var span_senha = document.getElementById('span_senha')
     var btn = document.getElementById('btn')
-
-
+    
+    
     if (senha.length < 8) {
         span_senha.innerHTML = 'Ops! Parece que sua senha é muito curta.'
        input.style.borderColor = 'red'
@@ -75,8 +74,8 @@ function validar_senha() {
         span_senha.style.color = 'red'
           span_senha.style.marginTop = '12px'
           btn.style.marginTop = '2px'
-
-
+    
+    
     }
     else {
         span_senha.innerHTML = ''
@@ -85,25 +84,25 @@ function validar_senha() {
         span.style.fontSize = '15px'
         span.style.marginTop = '12px'
         btn.style.marginTop = '-30px'
-
+    
     }
-}
-
-function cadastrar() {
+    }
+    
+    function cadastrar() {
     //aguardar();
-
+    
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = input_nome.value;
     var emailVar = email_usuario.value;
     var senhaVar = senha_usuario.value;
     var personagemVar = select_personagem.value
-
+    
     if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar <= 0) {
         //cardErro.style.display = "block"
         swal("Ops", "Preencha todos os campos", "error")
         mymusica.play()
-
+    
         finalizarAguardar();
         return false;
     }
@@ -121,8 +120,8 @@ function cadastrar() {
     }
     else {
         setInterval('oi', 5000)
-
-
+    
+    
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -138,18 +137,18 @@ function cadastrar() {
                 personagemServer: personagemVar
             })
         }).then(function (resposta) {
-
+    
             console.log("resposta: ", resposta);
-
+    
             if (resposta.ok) {
                 //cardErro.style.display = "block";
-
+    
                 swal("Bom trabalho!", "Cadastro realizado com sucesso redirecionando a tela de login...!", "success");
-
+    
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")
-
+    
                 limparFormulario();
                 finalizarAguardar();
             } else {
@@ -159,11 +158,12 @@ function cadastrar() {
             console.log(`#ERRO: ${resposta}`);
             finalizarAguardar();
         });
-
+    
         return false;
     }
-}
-
-//function sumirMensagem() {
+    }
+    
+    //function sumirMensagem() {
     //cardErro.style.display = "none"
-//}
+    //}
+}

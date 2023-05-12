@@ -1,0 +1,8 @@
+/* Section sobre */
+
+.container-sobre {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    z-index: 2;
+}

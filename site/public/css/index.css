@@ -11,25 +11,31 @@
 }
 
 
+/* Video Background */
+#video_background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    filter: brightness(10%);
+}
+
+#video-background {
+    width: 100%;
+    background-size: cover;
+}
+
 /* Pagina HOME */
 .container-conteudo-page {
-    background-color: #191919;
     width: 100%;
     height: 550px;
     background-repeat: no-repeat;
-    filter: saturate(120%);
     background-size: cover;
     display: flex;
     justify-content: center;
-    z-index: -1;
-    position: relative;
-}
-
-/* CONTAINER CONTEÚDO */
-.container-conteudo{
-    display: flex;
-    width: 90%;
-    height: 100%;
+    z-index: 1;
+    gap: 10vw;
 }
 
 /* CONTEUDO DA PAGINA HOME 'FIFA 2023' */
@@ -40,46 +46,56 @@
     display: flex;
     justify-content: flex-start;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
+    text-align: start;
+
 }
 
 
 .texto-fifa-home {
     display: flex;
-    margin-top: 6%;
-    margin-left: 10%;
     flex-direction: column;
     z-index: 0;
+    width: auto;
+    margin-top: 7%;
 }
 
 /* Propriedades definidas individualmente a estes textos */
 
 #fifa-Text {
-    font-size: 150px;
+    font-size: 120px;
     padding: 0;
     color: transparent;
     -webkit-text-stroke-color: rgb(255, 255, 255);
     -webkit-text-stroke-width: 2px;
 }
 
-#home-2023 {
-    font-size: 140px;
+.home-2023 {
+    font-size: 80px;
     padding: 0;
-    margin-top: -50px;
+    margin-top: -20px;
     height: auto;
     font-family: 'Righteous';
 }
 
-/* Imagem Bola */
-
-.bola_div {
-    width: auto;
-    height: min-content;
-    margin-top: 5%;
-    z-index: 1;
-    background-color: transparent;
+#bem_vindo {
+    padding: 0;
+    height: auto;
+    font-family: 'Lato';
+    font-size: 30px;
 }
 
-#bola-img {
-    width: 350px;
-    height: 350px;
+/* Imagem Bola */
+
+.ranking-logo_div {
+    width: auto;
+    margin-top: 6%;
+    height: 50%;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+#logoHome-img {
+    width: 100%;
+    height: 100%;
 }

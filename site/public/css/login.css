@@ -101,7 +101,7 @@
 
 .font-login {
     font-family: 'Konkhmer Sleokchher', Arial, Helvetica, sans-serif;
-    margin: 7% 0 4% 0;
+    margin: 7% 0 2% 0;
     font-size: 15px;
     color: white;
     font-weight: 400;
@@ -125,6 +125,7 @@
     margin-left: 3%;
     background-color: transparent;
     color: white;
+    padding-top: 0.9vh;
 }
 
 
@@ -150,8 +151,8 @@
 /* Icons Inputs login */
 
 .icons-inputs-login {
-    width: 1.5vw;
-    height: 2.8vh;
+    width: 1.2vw;
+    height: 2.4vh;
 
 }
 

@@ -4,18 +4,17 @@
 
 .container_menu_home {
     width: 100vw;
-    height: 800px;
+    height: 16vh;
     justify-content: center;
     display: flex;
+    background-color: transparent;
 }
 
 .container_menu {
-    background-color: #191919;
     width: 100vw;
-    height: 15%;
+    height: 100%;
     display: flex;
     justify-content: center;
-    backdrop-filter: blur(200px);
 }
 
 .menu_conteudo{
@@ -26,8 +25,6 @@
     align-items: center;
     position: relative;
     z-index: 0;
-    margin-top: 2%;
-
 }
 
 .menu-itens {

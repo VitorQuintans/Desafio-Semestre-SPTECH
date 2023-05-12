@@ -10,36 +10,47 @@
     <link rel="stylesheet" href="../public/css/index.css">
     <link rel="stylesheet" href="../public/css/menu.css">
     <link rel="stylesheet" href="../Desafio-Semestre-SPTECH/css/menu.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/css/sobre.css ">
 </head>
 
 <body>
-    <div class="container_menu_home">
+    <video autoplay loop muted id="video_background-container">
+        <source src="../public/assets/Video Background.mp4" id="video-background">
+    </video>
+    <section class="container_menu_home">
         <div class="container_conteudo_home">
             <div class="container_menu">
                 <div class="menu_conteudo">
                     <ul class="menu-itens">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Ranking</a></li>
+                        <li><a href="#">Modos</a></li>
                         <a href="#"><img src="assets/logo.png" alt="" id="logo-empresa"></a>
                         <li><a href="pages/cadastro.html">Cadastro</a></li>
                         <li><a href="pages/login.html">Login</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="container-conteudo-page">
-                <div class="container-conteudo">
-                    <div class="texto-fifa-home">
-                        <h1 id="fifa-Text">FIFA</h1>
-                        <h1 id="home-2023">2023</h1>
-                    </div>
-                    <div class="bola_div"><img src="assets/BOLA.png" alt="Bola" id="bola-img"></div>
-                    <div class="cartas-container"><img src="assets/" alt=""></div>
-                </div>
-
-
-            </div>
         </div>
-    </div>
+    </section>
+    <section class="container-conteudo-page">
+        <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease" class="texto-fifa-home">
+            <h1 id="bem_vindo">BEM VINDO AO </h1>
+            <h1 id="fifa-Text">FIFA</h1>
+            <h1 class="home-2023">RANKING</h1>
+        </div>
+        <div data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500" class="ranking-logo_div">
+            <img src="assets/logo.png" alt="Bola" id="logoHome-img">
+        </div>
+    </section>
+    <section class="container-sobre">
+        <h1>ajwdh</h1>
+    </section>
 </body>
 
 </html>
+
+<script>
+    AOS.init();
+</script>
