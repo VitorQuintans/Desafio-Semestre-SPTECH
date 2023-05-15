@@ -1,0 +1,77 @@
+#imagem-section-UT{
+    filter: brightness(10%);
+    background-size: cover;
+    width: 100vw;
+    height: 700px;
+    position: absolute;
+    overflow-y: hidden;
+}
+
+/* Section sobre */
+
+.Ultimate-team {
+    display: flex;
+    position: relative;
+}
+
+.container-UT {
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Conteúdo Sobre */
+.conteudo-UT {
+    width: 80%;
+    height: 55%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3vh;
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+/* Titulos de cada modo de jogo */
+.titulos-modos {
+    justify-content: center;
+    display: flex;
+    text-transform: uppercase;
+    color: white;
+    width: 100%;
+    margin-top: 10vh;
+    overflow-y: hidden;
+    font-size: 50px;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+/* TEXTO DE CADA MODO */
+.texto-modo {
+    justify-content: center;
+    display: flex;
+    text-transform: uppercase;
+    color: white;
+    overflow-y: hidden;
+    font-size: 18px;
+    text-align: justify;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    width: 40%;
+}
+
+/* video carreira individual */
+
+.container-video-carreira {
+    width: 55%;
+    justify-content: center;
+    display: flex;
+}
+
+#video-carreira {
+    width: 100%;
+}
