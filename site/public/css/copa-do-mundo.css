@@ -1,4 +1,4 @@
-#imagem-section-UT{
+#imagem-section-copa-do-mundo{
     filter: brightness(10%);
     background-size: cover;
     width: 100vw;
@@ -9,12 +9,12 @@
 
 /* Section sobre */
 
-.Pro-clubs {
+.copa-do-mundo {
     display: flex;
     position: relative;
 }
 
-.container-proClubs {
+.container-copa {
     width: 100%;
     height: 700px;
     background-size: cover;
@@ -27,7 +27,7 @@
 }
 
 /* Conteúdo Sobre */
-.conteudo-proClubs {
+.conteudo-copa {
     width: 80%;
     height: 55%;
     display: flex;
@@ -38,14 +38,5 @@
 
 }
 
+
 /* video carreira individual */
-
-.container-video-carreira {
-    width: 55%;
-    justify-content: center;
-    display: flex;
-}
-
-#video-carreira {
-    width: 100%;
-}

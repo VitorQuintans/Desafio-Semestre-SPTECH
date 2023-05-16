@@ -1,6 +1,6 @@
 /* Imagem Background */
 #imagem-section-sobre{
-    filter: brightness(10%);
+    filter: brightness(7%);
     background-size: cover;
     width: 100vw;
     height: 700px;
@@ -60,7 +60,7 @@
     color: white;
     overflow-y: hidden;
     font-size: 18px;
-    text-align: justify;
+    text-align: center;
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     width: 35%;
 }
