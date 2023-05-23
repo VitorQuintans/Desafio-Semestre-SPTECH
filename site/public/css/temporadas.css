@@ -1,0 +1,51 @@
+#imagem-section-UT{
+    filter: brightness(10%);
+    background-size: cover;
+    width: 100vw;
+    height: 700px;
+    position: absolute;
+    overflow-y: hidden;
+}
+
+/* Section sobre */
+
+.Temporadas {
+    display: flex;
+    position: relative;
+}
+
+.container-Temporadas {
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    overflow-y: hidden;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Conteúdo Sobre */
+.conteudo-Temporadas {
+    width: 80%;
+    height: 55%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3vh;
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+/* video carreira individual */
+
+.container-video-carreira {
+    width: 55%;
+    justify-content: center;
+    display: flex;
+}
+
+#video-carreira {
+    width: 100%;
+}
