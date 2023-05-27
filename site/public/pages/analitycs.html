@@ -8,6 +8,13 @@
     <title>Descubra o Time! | Fifa Ranking</title>
     <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/analitycs.css">
+    <script src="../js/analitycs.js"></script>
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
+" rel="stylesheet">
 </head>
 
 <body>
@@ -15,8 +22,11 @@
     <div class="container-page">
         <div class="conteudo-page">
             <div class="container-clube">
-                <h1 class="titulo-principal">TIME INDICADO:</h1>
-
+                <div class="voltar-btn-div-1"><a href="../index.html"><img src="../assets/botao-voltar.png"
+                            id="voltar-btn-1" alt=""></a>
+                    <h1 class="titulo-principal">TIME INDICADO:</h1>
+                </div>
+                <img src="../assets/logo.png" alt="" id="logo_nenhum_clube">
             </div>
             <div class="container-perguntas">
                 <h1 class="titulo-principal" id="titulo-perguntas">Responda as perguntas<br>e indicaremos um clube a
@@ -43,8 +53,16 @@
                         <option value="B">4-2-2 e suas variações</option>
                         <option value="C">5-2-1-2 e suas variações</option>
                     </select>
+                    <h2 class="perguntas">Por onde vocÊ ataca mais?</h2>
+                    <select name="" id="pergunta-1">
+                        <option value="">Selecione uma opção...</option>
+                        <option value="A">Pontas</option>
+                        <option value="B">Meio</option>
+                    </select>
                 </form>
-                <button onclick="enviarRespostas()">Enviar Respostas</button>
+                <div class="div-btn">
+                    <button onclick="enviarRespostas()" class="btn-enviar">Enviar Respostas</button>
+                </div>
             </div>
         </div>
     </div>

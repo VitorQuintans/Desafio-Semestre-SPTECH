@@ -17,6 +17,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/copa-do-mundo.css">
     <link rel="stylesheet" href="css/jogo-rapido.css">
+    <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js
+"></script>
+    <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
+" rel="stylesheet">
 </head>
 
 <body>
@@ -28,8 +34,9 @@
             <div class="container_menu">
                 <div class="menu_conteudo">
                     <ul class="menu-itens">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#sobre-nos-link">Modos</a></li>
+                        <li><a href="#temporadas">Modos</a></li>
+                        <li><a href="../public/pages/analitycs.html"
+                                style="display: flex; text-align: center;">Descobrir<br>Time</a></li>
                         <a href="#"><img src="assets/logo.png" alt="" id="logo-empresa"></a>
                         <li><a href="pages/cadastro.html">Cadastro</a></li>
                         <li><a href="pages/login.html">Login</a></li>
@@ -49,6 +56,27 @@
             <img src="assets/logo.png" alt="Bola" id="logoHome-img">
         </div>
     </section>
+
+    <!-- TEMPORADAS -->
+
+    <section class="sobre-nos">
+        <img src="assets/background-temporadas.jpg" id="imagem-section-jogo-rapido" alt="">
+        <section class="container-jogo-rapido" id="temporadas">
+            <h1 class="titulos-modos" data-aos="fade-up" data-aos-duration="700">TEMPORADAS</h1>
+            <div class="conteudo-copa">
+                <p class="texto-modo" data-aos="fade-right">&emsp;&emsp;No Temporadas (ou Seasons) é possível escolher
+                    qualquer equipe disponível no FIFA 22, inclusive os times femininos, e encarar jogadores online na
+                    tentativa de subir pelas divisões. Todos começam da divisão 10, e são promovidos conforme obtêm os
+                    resultados exigidos para subir.
+                </p>
+                <div class="container-video-carreira" data-aos="flip-right"><img src="assets/temporadas.png"
+                        id="video-carreira" alt="" style="width: 70vw; height: 50vh;"></div>
+            </div>
+        </section>
+    </section>
+
+    <!-- CARREIRA -->
+
     <section class="sobre-nos" id="sobre-nos-link">
         <img src="assets/background-carreira.jpg" id="imagem-section-sobre" alt="">
         <section class="container-sobre">
@@ -71,6 +99,9 @@
             </div>
         </section>
     </section>
+
+    <!-- ULTIMATE TEAM -->
+
     <section class="Ultimate-team">
         <img src="assets/ultimate-team_wallpaper1.jpg" id="imagem-section-UT" alt="">
         <section class="container-UT">
@@ -82,58 +113,68 @@
                         src="https://www.youtube.com/embed/Xz1AIkjLKCk" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen id="video-carreira"></iframe></div>
-                <p class="texto-modo" data-aos="zoom-in">&emsp;&emsp;O Ultimate Team, também conhecido como FUT, é o modo de jogo
+                <p class="texto-modo" data-aos="zoom-in">&emsp;&emsp;O Ultimate Team, também conhecido como FUT, é o
+                    modo de jogo
                     mais
                     popular da franquia FIFA. Nele, players podem criar e gerenciar sua própria equipe, escolhendo
                     atletas de vários clubes e ligas ao redor do mundo.</p>
             </div>
         </section>
     </section>
+
+    <!-- PRO CLUBS -->
+
     <section class="Pro-clubs">
         <img src="assets/fifa-23-PRO-CLUBS.jpg" id="imagem-section-UT" alt="">
         <section class="container-proClubs">
-            <h1 class="titulos-modos" data-aos="fade-up"
-            data-aos-anchor-placement="top-bottom">PRO CLUBS</h1>
+            <h1 class="titulos-modos" data-aos="fade-up" data-aos-anchor-placement="top-bottom">PRO CLUBS</h1>
             <div class="conteudo-proClubs">
-                <p class="texto-modo" data-aos="fade-up"
-                data-aos-duration="500">&emsp;&emsp;O Pro Clubs é um modo social online do FIFA que permite a criação de
+                <p class="texto-modo" data-aos="fade-up" data-aos-duration="500">&emsp;&emsp;O Pro Clubs é um modo
+                    social online do FIFA que permite a criação de
                     Craque Virtual para jogar no campo com suas amizades.</p>
-                <div class="container-video-carreira" data-aos="fade-up"
-                data-aos-duration="500"><iframe width="560" height="315"
-                        src="https://www.youtube.com/embed/1AWzW_V619Q" title="YouTube video player" frameborder="0"
+                <div class="container-video-carreira" data-aos="fade-up" data-aos-duration="500"><iframe width="560"
+                        height="315" src="https://www.youtube.com/embed/1AWzW_V619Q" title="YouTube video player"
+                        frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen id="video-carreira"></iframe></div>
             </div>
         </section>
     </section>
+
+    <!-- COPA DO MUNDO -->
+
     <section class="copa-do-mundo">
         <img src="assets/copa-do-mundo.jpg" id="imagem-section-copa-do-mundo" alt="">
         <section class="container-copa">
-            <h1 class="titulos-modos" data-aos="fade-up"
-            data-aos-anchor-placement="bottom-center">COPA DO MUNDO</h1>
+            <h1 class="titulos-modos" data-aos="fade-up" data-aos-anchor-placement="bottom-center">COPA DO MUNDO</h1>
             <div class="conteudo-copa">
                 <div class="container-video-carreira" data-aos="fade-right"><iframe width="560" height="315"
                         src="https://www.youtube.com/embed/qsEaEdyPPBE" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe></div>
-                <p class="texto-modo" data-aos="fade-right">&emsp;&emsp;O modo da Copa do Mundo 2022 traz várias opções para jogar com amigos
+                <p class="texto-modo" data-aos="fade-right">&emsp;&emsp;O modo da Copa do Mundo 2022 traz várias opções
+                    para jogar com amigos
                     e adversários online. Usuários poderão entrar em torneios contra outros 3 oponentes para ver quem
                     consegue conquistar o troféu.<br><br>&emsp;&emsp;O Jogo Rápido Online também permite disputar contra
                     qualquer pessoa com nações classificadas.</p>
             </div>
         </section>
     </section>
+
+    <!-- JOGO RAPIDO -->
+
     <section class="jogo-rapido">
         <img src="assets/jogo-rapido.jpg" id="imagem-section-jogo-rapido" alt="">
         <section class="container-jogo-rapido">
             <h1 class="titulos-modos" data-aos="flip-up">JOGO RAPIDO</h1>
             <div class="conteudo-copa">
                 <p class="texto-modo" data-aos="fade-right">&emsp;&emsp;ESSE É O MODO MAIS JOGADO DO FIFA,
-                    ELE É ADEQUADO PARA DOIS JOGADORES QUE QUEREM SE DIVERTIREM CASUALMENTE, DISPUTANDO ENTRE DOIS CLUBES DE QUALQUER LIGA
+                    ELE É ADEQUADO PARA DOIS JOGADORES QUE QUEREM SE DIVERTIREM CASUALMENTE, DISPUTANDO ENTRE DOIS
+                    CLUBES DE QUALQUER LIGA
                     E QUALQUER REGIÃO DO MUNDO.
                 </p>
-                <div class="container-video-carreira" data-aos="flip-right"><img src="assets/jogo-rapido-iframe.jpg" id="video-carreira"
-                        alt=""></div>
+                <div class="container-video-carreira" data-aos="flip-right"><img src="assets/jogo-rapido-iframe.jpg"
+                        id="video-carreira" alt=""></div>
             </div>
         </section>
     </section>
