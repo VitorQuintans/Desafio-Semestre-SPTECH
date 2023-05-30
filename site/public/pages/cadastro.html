@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="../css/index.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
- 
     <script src="../js/cadastro.js"></script>
-   
+    <script src="../js/funcoes.js"></script>
 
-    
+
+
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                     <h1 id="Login-page">Cadastro</h1>
                 </div>
                 <div class="form">
-                    <form id="form-conteudo">
+                    <section id="form-conteudo">
                         <h1 class="font-login">Usuário:</h1>
                         <div class="inputs-containers-individual">
                             <img src="../assets/user.png" alt="ImagemUser" class="icons-inputs-login">
@@ -53,8 +53,9 @@
                             <input type="text" class="input-login" id="input_login_email"
                                 placeholder="Insira seu email..."><br>
                         </div>
+                    </section>
                 </div>
-                <div class="div-botao"><button onclick="validacaoCampos()" class="btn-entrar-login">Enviar</button>
+                <div class="div-botao"><button onclick="cadastrar()" class="btn-entrar-login">Enviar</button>
                 </div>
                 </form>
             </div>
@@ -65,4 +66,3 @@
 </body>
 
 </html>
-

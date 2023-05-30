@@ -5,89 +5,94 @@ function validacaoCampos() {
     var senha = input_login_password.value
     var email = input_login_email.value
 
-    if (email == null || nome == null || senha == null
-        || email == undefined || nome == undefined || senha == undefined ||
-        email == "" || nome == "" || senha == "") {
-            // SE ESTIVER ALGUM CAMPO FALTANDO
-                 nome.style = 'border-bottom: 3px solid red;'
-                 senha.style = 'border-bottom: 3px solid red;'
-                 email.style = 'border-bottom: 3px solid red;'
-            //   swal('Ops' , 'Campos Vazios!' , 'error')
-     }
+    
 
-    else if (nome.length < 3) {
-        span_erro_nome.innerHTML = "Oops! Parece que seu texto é muito curto."
-        input.style.borderColor = 'red'
-        span.style.color = 'red'
-        span_erro_nome.style.color = 'red'
-        span_erro_nome.style.marginTop = '15px'
-        span.style.color = 'red'
-        span.style.fontSize = '15px'
-        span.style.marginTop = '12px'
-        btn.style.marginTop = '2px'
-    }
-    else {
-        span_erro_nome.innerHTML = ''
-        input.style.borderColor = 'green'
-        span.style.color = 'green'
-        span.style.fontSize = '15px'
-        span.style.marginTop = '12px'
-    }
-    function validar_email() {
-    var email = email_usuario.value
-    var input = document.getElementById('email_usuario')
-    var span = document.getElementById('campo_email')
-    var span_email = document.getElementById('span_erro_email')
+    // console.log(nome, email, senha)
+
+    // if (email == null || nome == null || senha == null
+    //     || email == undefined || nome == undefined || senha == undefined ||
+    //     email == "" || nome == "" || senha == "") {
+    //         // SE ESTIVER ALGUM CAMPO FALTANDO
+    //              document.getElementById(input_login_user).style.border = "solid red"
+    //              document.getElementById(input_login_password).style.border = "solid red"
+    //              document.getElementById(input_login_email).style.border = "solid red"
+    //  }
+
+    // else if (nome.length < 3) {
+    //     span_erro_nome.innerHTML = "Oops! Parece que seu texto é muito curto."
+    //     input.style.borderColor = 'red'
+    //     span.style.color = 'red'
+    //     span_erro_nome.style.color = 'red'
+    //     span_erro_nome.style.marginTop = '15px'
+    //     span.style.color = 'red'
+    //     span.style.fontSize = '15px'
+    //     span.style.marginTop = '12px'
+    //     btn.style.marginTop = '2px'
+    // }
+    // else {
+    //     span_erro_nome.innerHTML = ''
+    //     input.style.borderColor = 'green'
+    //     span.style.color = 'green'
+    //     span.style.fontSize = '15px'
+    //     span.style.marginTop = '12px'
+    // }
+
+
+    // function validar_email() {
+    // var email = email_usuario.value
+    // var input = document.getElementById('email_usuario')
+    // var span = document.getElementById('campo_email')
+    // var span_email = document.getElementById('span_erro_email')
     
-    if (email.indexOf("@") == -1 || email.indexOf(".com") == -1 || email.length < 7) {
-        span_erro_email.innerHTML = "Ops! Parece que seu email é inválido."
-        input.style.borderColor = 'red'
-        span_email.style.color = 'red'
-        span_email.style.marginTop = '15px'
-        span.style.color = 'red'
-        span.style.fontSize = '15px'
-        span.style.marginTop = '12px'
+    // if (email.indexOf("@") == -1 || email.indexOf(".com") == -1 || email.length < 7) {
+    //     span_erro_email.innerHTML = "Ops! Parece que seu email é inválido."
+    //     input.style.borderColor = 'red'
+    //     span_email.style.color = 'red'
+    //     span_email.style.marginTop = '15px'
+    //     span.style.color = 'red'
+    //     span.style.fontSize = '15px'
+    //     span.style.marginTop = '12px'
     
-    }
-    else {
-        span_erro_email.innerHTML = ''
-        input.style.borderColor = 'green'
-        span.style.color = 'green'
-        span.style.fontSize = '15px'
-        span.style.marginTop = '12px'
-    }
-    }
-    function validar_senha() {
-    var senha = senha_usuario.value
-    var input = document.getElementById('senha_usuario')
-    var span = document.getElementById('campo_senha')
-    var span_senha = document.getElementById('span_senha')
-    var btn = document.getElementById('btn')
-    
-    
-    if (senha.length < 8) {
-        span_senha.innerHTML = 'Ops! Parece que sua senha é muito curta.'
-       input.style.borderColor = 'red'
-        span.style.color = 'red'
-        span.style.fontSize = '15px'
-        span.style.marginTop = '12px'
-        span_senha.style.color = 'red'
-          span_senha.style.marginTop = '12px'
-          btn.style.marginTop = '2px'
+    // }
+    // else {
+    //     span_erro_email.innerHTML = ''
+    //     input.style.borderColor = 'green'
+    //     span.style.color = 'green'
+    //     span.style.fontSize = '15px'
+    //     span.style.marginTop = '12px'
+    // }
+    // }
+    // function validar_senha() {
+    // var senha = senha_usuario.value
+    // var input = document.getElementById('senha_usuario')
+    // var span = document.getElementById('campo_senha')
+    // var span_senha = document.getElementById('span_senha')
+    // var btn = document.getElementById('btn')
     
     
-    }
-    else {
-        span_senha.innerHTML = ''
-        input.style.borderColor = 'green'
-        span.style.color = 'green'
-        span.style.fontSize = '15px'
-        span.style.marginTop = '12px'
-        btn.style.marginTop = '-30px'
+    // if (senha.length < 8) {
+    //     span_senha.innerHTML = 'Ops! Parece que sua senha é muito curta.'
+    //    input.style.borderColor = 'red'
+    //     span.style.color = 'red'
+    //     span.style.fontSize = '15px'
+    //     span.style.marginTop = '12px'
+    //     span_senha.style.color = 'red'
+    //       span_senha.style.marginTop = '12px'
+    //       btn.style.marginTop = '2px'
     
-    }
-    }
     
+    // }
+    // else {
+    //     span_senha.innerHTML = ''
+    //     input.style.borderColor = 'green'
+    //     span.style.color = 'green'
+    //     span.style.fontSize = '15px'
+    //     span.style.marginTop = '12px'
+    //     btn.style.marginTop = '-30px'
+    
+    // }
+    // }
+}
     function cadastrar() {
     //aguardar();
     
@@ -96,13 +101,10 @@ function validacaoCampos() {
     var nomeVar = input_nome.value;
     var emailVar = email_usuario.value;
     var senhaVar = senha_usuario.value;
-    var personagemVar = select_personagem.value
     
     if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar <= 0) {
         //cardErro.style.display = "block"
         swal("Ops", "Preencha todos os campos", "error")
-        mymusica.play()
-    
         finalizarAguardar();
         return false;
     }
@@ -134,7 +136,6 @@ function validacaoCampos() {
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                personagemServer: personagemVar
             })
         }).then(function (resposta) {
     
@@ -166,4 +167,3 @@ function validacaoCampos() {
     //function sumirMensagem() {
     //cardErro.style.display = "none"
     //}
-}

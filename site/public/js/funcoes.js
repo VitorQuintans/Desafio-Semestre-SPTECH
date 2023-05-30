@@ -1,5 +1,5 @@
 // sessão
-function cadastrar2() {
+function ()cadastrar2 {
     // aguardar();
 
     var email = sessionStorage.EMAIL_USUARIO;
