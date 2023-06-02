@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../css/index.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="../js/cadastro.js"></script>
 </head>
 
 <body>
@@ -25,21 +28,20 @@
                     <h1 id="Login-page">Login</h1>
                 </div>
                 <div class="form">
-                    <form id="form-conteudo">
+                    <div id="form-conteudo">
                         <h1 class="font-login">Usuário:</h1>
                         <div class="inputs-containers-individual">
                             <img src="../assets/user.png" alt="ImagemUser" class="icons-inputs-login">
-                            <input class="input-login" id="input-login-user" placeholder="Insira seu usuário..."><br>
+                            <input class="input-login" id="input_login_user" placeholder="Insira seu usuário..."><br>
                         </div>
                         <h1 class="font-login">Senha:</h1>
                         <div class="inputs-containers-individual">
                             <img src="../assets/password.png" alt="ImagemUser" class="icons-inputs-login">
-                            <input type="password" class="input-login" id="input-login-password"
+                            <input type="password" class="input-login" id="input_login_password"
                                 placeholder="Insira sua senha..."><br>
                         </div>
-                        <div class="div-botao"><button onclick="verficarLogin()"
-                                class="btn-entrar-login">Entrar</button></div>
-                    </form>
+                        <div class="div-botao"><button onclick="entrar()" class="btn-entrar-login">Entrar</button></div>
+                    </div>
                 </div>
             </div>
             <div id="container-img-form">
@@ -53,4 +55,67 @@
 
 <script>
     AOS.init();
+
+    function entrar() {
+        // aguardar();
+
+        var nomeVar = input_login_user.value;
+        var senhaVar = input_login_password.value;
+
+        if (nomeVar == "" || senhaVar == "") {
+            finalizarAguardar();
+            return false;
+        }
+
+        console.log("FORM LOGIN: ", nomeVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    ;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "/pages/analitycs.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Este usuário não existe!'
+                })
+            resposta.text().then(texto => {
+                // console.error(texto);
+                // finalizarAguardar(texto);
+            });
+        }
+
+        }).catch (function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+    }
 </script>

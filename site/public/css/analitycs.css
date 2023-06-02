@@ -80,13 +80,16 @@
     overflow-y: hidden;
 }
 
-#pergunta-1 {
+.selects {
     background-color: rgb(3, 3, 3);
     border-radius: 5px;
     border: 2px white solid;
     width: 40%;
     color: white;
+}
 
+.selects:hover {
+    cursor: pointer;
 }
 
 .perguntas {
