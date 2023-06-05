@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Lato:wght@900&family=Righteous&family=Roboto&family=Roboto+Condensed&display=swap');
+
+/* ESTILIZAÇÃO DO SITE INTEIRO */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.container-page{
+    background-color: #30363D;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-page {
+    background-color: rgb(168, 185, 185);
+    width: 80%;
+    height: 90%;
+    border-radius: 20px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    
+}
+
+#bem_vindo_titulo {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    color: white;
+}
+
+.container-titulo {
+    background-color: blueviolet;
+    justify-content: center;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    margin-top: 5vh;
+}
+
+
+.container-central{
+    background-color: blue;
+    width: 80%;
+    height: 68%;
+    display: flex;
+    margin-top: 4vh;
+}
+.container-esquerdo {
+    background-color: aliceblue;
+    width: 40%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.container-direito {
+    background-color: aquamarine;
+    width: 60%;
+    justify-content: center;
+    display: flex;
+}
+
+.texto-style {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#sortear_texto{
+    margin-top: 5vh;
+    color: black;
+    font-size: 20px;
+}
+
+#logo_nenhum_clube {
+    margin-top: 3vh;
+    width: 50%;
+    height: 70%;
+
+}

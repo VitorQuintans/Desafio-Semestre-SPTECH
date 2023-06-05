@@ -10,7 +10,13 @@
     
     if (nomeVar == "" || emailVar == "" || senhaVar == "") {
         //cardErro.style.display = "block"
-        swal("Ops", "Preencha todos os campos", "error")
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Preencha todos os campos!',
+            showConfirmButton: true,
+            timer: 2300
+        })
         finalizarAguardar();
         return false;
     }
@@ -46,9 +52,13 @@
     
             if (resposta.ok) {
                 //cardErro.style.display = "block";
-    
-                swal("Bom trabalho!", "Cadastro realizado com sucesso redirecionando a tela de login...!", "success");
-    
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Seu cadastrado foi feito com sucesso!',
+                    showConfirmButton: false,
+                    timer: 2300
+                })
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "2000")

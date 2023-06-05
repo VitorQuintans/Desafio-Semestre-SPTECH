@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | Fifa Ranking</title>
+    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="shortcut icon" href="../assets/LOGIN.png" type="image/x-icon">
+</head>
+
+<body>
+    <section class="container-page">
+        <div class="conteudo-page">
+            <div class="container-titulo">
+                <h1 id="bem_vindo_titulo">Olá, SESSIONSTORAGE.NOME</h1>
+            </div>
+            <div class="container-central">
+                <div class="container-esquerdo">
+                    <h2 class="texto-style">O seu time atual é:</h2>
+                    <img src="../assets/logo.png" alt="" id="logo_nenhum_clube">
+                </div>
+                <div class="container-direito">
+                    <h2 class="texto-style">Times mais jogados</h2>
+                </div>
+            </div>
+            <a href="analitycs.html" class="texto-style" id="sortear_texto">Sortear novo time!</a>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    document.getElementById('bem_vindo_titulo').innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+
+    if (sessionStorage.FK_CLUBE == '11') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Manchester City!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/Manchester_City.png'
+    } else if (sessionStorage.FK_CLUBE == '7') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Real Madrid!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/real_madrid.png'
+    }
+
+</script>

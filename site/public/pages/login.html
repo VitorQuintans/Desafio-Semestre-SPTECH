@@ -67,9 +67,6 @@
             return false;
         }
 
-        console.log("FORM LOGIN: ", nomeVar);
-        console.log("FORM SENHA: ", senhaVar);
-
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -89,12 +86,25 @@
                     console.log(json);
                     console.log(JSON.stringify(json));
                     ;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+                    sessionStorage.NOME_USUARIO = json.nomeUsuario;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    sessionStorage.EMAIL_USER = json.email;
+                    sessionStorage.FK_CLUBE = json.fk_Clube;
+                    sessionStorage.ID_CLUBES = json.idClube;
+
+                    
+
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'SEU USUARIO ESTÁ SENDO LOGADO',
+                        showConfirmButton: false,
+                        timer: 2300
+                    })
 
                     setTimeout(function () {
                         window.location = "/pages/analitycs.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 2300); // apenas para exibir o loading
 
                 });
 
@@ -106,16 +116,16 @@
                     title: 'Oops...',
                     text: 'Este usuário não existe!'
                 })
-            resposta.text().then(texto => {
-                // console.error(texto);
-                // finalizarAguardar(texto);
-            });
-        }
+                resposta.text().then(texto => {
+                    // console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
 
-        }).catch (function (erro) {
-        console.log(erro);
-    })
+        }).catch(function (erro) {
+            console.log(erro);
+        })
 
-    return false;
+        return false;
     }
 </script>
