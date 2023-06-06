@@ -5,13 +5,10 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
-        instrucaoSql = `select count(usuario.fkpersonagem) as voto , personagem.nome as personagem, usuario. *   
-        from usuario join personagem on idpersonagem= fkpersonagem group by personagem;`;
-
+        instrucaoSql = `SELECT Clube.nomeClube, COUNT(*) as totalVotos FROM Usuarios JOIN Clube  ON idClube = fk_Clube GROUP BY fk_Clube ORDER BY totalVotos;`;
     }
      else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select count(usuario.fkpersonagem) as voto , personagem.nome as personagem, usuario. *   
-        from usuario join personagem on idpersonagem= fkpersonagem group by personagem;`;
+        instrucaoSql = `SELECT Clube.nomeClube, COUNT(*) as totalVotos FROM Usuarios JOIN Clube  ON idClube = fk_Clube GROUP BY fk_Clube ORDER BY totalVotos;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -51,8 +48,15 @@ function buscarMedidasEmTempoReal(idAquario) {
     return database.executar(instrucaoSql);
 }
 
+function pegarId(id_user) {
+    var instrucaoPuxarDados = 
+    `SELECT fk_Clube FROM Usuarios WHERE idUsuario = 2;`;
+    console.log("Executando a instrução SQL: \n" + instrucaoPuxarDados);
+    return database.executar(instrucaoPuxarDados);
+  };
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    pegarId
 }

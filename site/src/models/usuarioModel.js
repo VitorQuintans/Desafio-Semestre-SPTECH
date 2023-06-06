@@ -1,3 +1,4 @@
+const { atualizarDados } = require("../controllers/usuarioController");
 var database = require("../database/config")
 
 function listar() {
@@ -31,8 +32,25 @@ function cadastrar(nome, email, senha) {
     return database.executar(instrucao);
 }
 
+function atualizarTime(fk_Clube, id_user) {
+    console.log(`Olá`)
+    var instrucaoUpdate = 
+    `UPDATE Usuarios SET fk_Clube = ${fk_Clube} WHERE idUsuario = ${id_user};`;
+    console.log("Executando a instrução SQL: \n" + instrucaoUpdate);
+    return database.executar(instrucaoUpdate);
+  };
+
+  function puxarDados(id_user) {
+    var instrucaoPuxarDados = 
+    `SELECT fk_Clube FROM Usuarios WHERE idUsuario = ${id_user};`;
+    console.log("Executando a instrução SQL: \n" + instrucaoPuxarDados);
+    return database.executar(instrucaoPuxarDados);
+  };
+
 module.exports = {
     entrar,
     cadastrar,
-    listar
+    listar,
+    atualizarTime,
+    puxarDados
 };

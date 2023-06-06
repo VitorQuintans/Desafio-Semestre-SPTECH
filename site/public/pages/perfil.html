@@ -8,9 +8,12 @@
     <title>Perfil | Fifa Ranking</title>
     <link rel="stylesheet" href="../css/perfil.css">
     <link rel="shortcut icon" href="../assets/LOGIN.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="obterDadosGrafico(), pegarId()">
     <section class="container-page">
         <div class="conteudo-page">
             <div class="container-titulo">
@@ -19,13 +22,17 @@
             <div class="container-central">
                 <div class="container-esquerdo">
                     <h2 class="texto-style">O seu time atual é:</h2>
-                    <img src="../assets/logo.png" alt="" id="logo_nenhum_clube">
+                    <img src="../assets/logo.png" alt="" id="logo_nenhum_clube" style="width: 220px;">
+                    <input type="text" id="input_time" placeholder="Pesquise um time na lista..."><button onclick="pesquisarTime()" id="btn_pesquisa">Pesquisar</button>
                 </div>
                 <div class="container-direito">
                     <h2 class="texto-style">Times mais jogados</h2>
+                    <div style="margin-top: 10vh; width: 35vw;">
+                        <canvas id="myChart2"></canvas>
+                    </div>
                 </div>
             </div>
-            <a href="analitycs.html" class="texto-style" id="sortear_texto">Sortear novo time!</a>
+            <a href="analitycs.html" class="texto-style" id="sortear_texto">Fazer outra análise!</a>
         </div>
     </section>
 </body>
@@ -33,14 +40,230 @@
 </html>
 
 <script>
-    document.getElementById('bem_vindo_titulo').innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
 
-    if (sessionStorage.FK_CLUBE == '11') {
+    function pesquisarTime() {     
+ var todosTimes = [
+    'ATLÉTICO DE MADRID','BORUSSIA DORTMUND','CHELSEA','BAYERN MUNCHEN','BARCELONA','REAL MADRID','INTER DE MILÃO','JUVENTUS','LIVERPOOL','MANCHESTER CITY','MANCHESTER UNITED','PSG','TOTTENHAM'
+  ]
+
+  var inputTime = input_time.value.toUpperCase()
+
+  for (var i= 0; i < todosTimes.length; i++) {
+    if (inputTime == todosTimes[i]) {
+        Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: '<span style="font-family: Lato;">Nós temos esse time na lista!</span>',
+  showConfirmButton: false,
+  timer: 1500
+})
+    }
+}
+if (todosTimes.indexOf(inputTime) == -1) {
+    Swal.fire({
+  icon: 'error',
+  title: '<span style="font-family: Lato;">Que pena...</span>',
+  text: 'Esse time não exite na nossa lista!',
+  background: 'black',
+  color: 'white',
+})
+}   
+}
+
+var id_user = sessionStorage.ID_USUARIO
+
+    document.getElementById('bem_vindo_titulo').innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+    if (sessionStorage.FK_CLUBE == '14') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Tottenham!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/tottenham.png'
+    }  else if (sessionStorage.FK_CLUBE == '13') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é PSG!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/psg.png'
+    }  else if (sessionStorage.FK_CLUBE == '12') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Manchester United!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/Manchester_United.png'
+    }  else if (sessionStorage.FK_CLUBE == '11') {
         console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Manchester City!`)
         document.getElementById('logo_nenhum_clube').src = '../assets/Manchester_City.png'
+    }  else if (sessionStorage.FK_CLUBE == '10') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Liverpool!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/Liverpool_FC.png'
+    } else if (sessionStorage.FK_CLUBE == '9') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Juventus!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/Juventus.png'
+    } else if (sessionStorage.FK_CLUBE == '8') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Inter de Milão!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/inter-milan.png'
     } else if (sessionStorage.FK_CLUBE == '7') {
         console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Real Madrid!`)
         document.getElementById('logo_nenhum_clube').src = '../assets/real_madrid.png'
+    } else if (sessionStorage.FK_CLUBE == '6') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Barcelona!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/FCBarcelona.png'
+    } else if (sessionStorage.FK_CLUBE == '5') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Bayern Munchen!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/FC_Bayern_Munchen.png'
+    } else if (sessionStorage.FK_CLUBE == '4') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Chelsea!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/chelsea.png'
+    } else if (sessionStorage.FK_CLUBE == '3') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Borussia Dortmund!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/borussia.png'
+    } else if (sessionStorage.FK_CLUBE == '2') {
+        console.log (`Olá ${sessionStorage.NOME_USUARIO}, o seu time é Atlético de Madrid!`)
+        document.getElementById('logo_nenhum_clube').src = '../assets/atletico_de_madrid.png'
+        document.getElementById('logo_nenhum_clube').style = "width: 250px;"
     }
 
+function obterDadosGrafico(idAquario) {
+
+fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+        response.json().then(function (resposta) {
+            console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+            resposta.reverse();
+
+            plotarGrafico(resposta, idAquario);
+
+        });
+    } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+    }
+})
+    .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    });
+}
+
+// Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+// Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+// A função *plotarGrafico* também invoca a função *atualizarGrafico*
+function plotarGrafico(resposta, idAquario) {
+
+console.log('iniciando plotagem do gráfico...');
+
+// Criando estrutura para plotar gráfico - labels
+let labels = [];
+
+// Criando estrutura para plotar gráfico - dados
+    let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'CLUBES',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgb(255, 255, 255, 1)',
+                tension: 0.1,
+             },
+            {
+                label: '',
+                data: [],
+                fill: false,
+                backgroundColor: 'rgb(255, 255, 255, 1)',
+                tension: 0.1,
+            }]
+        };
+
+        Chart.defaults.color = '#FFF'
+
+console.log('----------------------------------------------')
+console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+console.log(resposta)
+
+// Inserindo valores recebidos em estrutura para plotar o gráfico
+for (i = 0; i < resposta.length; i++) {
+    var registro = resposta[i];
+    labels.push(registro.nomeClube);
+    dados.datasets[0].data.push(registro.nomeClube);
+    dados.datasets[1].data.push(registro.totalVotos);
+}
+
+// Criando estrutura para plotar gráfico - config
+const config = {
+    type: 'bar',
+    data: dados,
+};
+
+// Adicionando gráfico criado em div na tela
+let myChart = new Chart(
+    document.getElementById(`myChart2`),
+    config
+);
+}
+
+function pegarId(id_user) {
+
+    fetch("/medidas/pegarId", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                id_userServer: id_user
+            })
+        }).then(function (resposta) {
+    
+            console.log("resposta: ", resposta);
+    
+            if (resposta.ok) {
+                //cardErro.style.display = "block";
+                console.log("Genio")
+            } else {
+                console.log("deu errado!")
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+    
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//     fetch("/usuarios/puxarDados", {
+//   method: "GET",
+//   headers: {
+//       "Content-Type": "application/json"
+//     },
+//   body: JSON.stringify({
+//     // crie um atributo que recebe o valor recuperado aqui
+//     // Agora vá para o arquivo routes/usuario.js
+//     id_UserServer: id_user
+// })
+// }).then(function (resposta_Dados) {
+  
+//   console.log("resposta: ", resposta_Dados);
+  
+//   if (resposta_Dados.ok) {
+//       //cardErro.style.display = "block";
+//       // setTimeout(() => {
+//         //     window.location = "login.html";
+//         // }, "2000")
+//         console.log("Consegui puxar os dados!")
+//   }
+// }).catch(function (resposta_Dados) {
+//   console.log(`#ERRO: ${resposta_Dados}`);
+// });
 </script>

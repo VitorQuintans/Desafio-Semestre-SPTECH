@@ -11,4 +11,7 @@ router.get("/tempo-real/:idAquario", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
+router.get("/pegarId/:id_user", function (req, res) {
+    medidaController.pegarId(req, res);
+})
 module.exports = router;

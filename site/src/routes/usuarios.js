@@ -20,4 +20,11 @@ router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });
 
+router.put("/atualizarTime", function (req, res) {
+    usuarioController.atualizarTime(req, res);
+});
+
+router.get("/puxarDados", function (req, res) {
+    usuarioController.puxarDados(req, res);
+});
 module.exports = router;

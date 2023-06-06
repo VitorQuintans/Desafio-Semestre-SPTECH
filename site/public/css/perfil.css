@@ -11,7 +11,8 @@
 }
 
 .container-page{
-    background-color: #30363D;
+    background-image: url('../assets/background_perfil.png');
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -20,13 +21,14 @@
 }
 
 .conteudo-page {
-    background-color: rgb(168, 185, 185);
+    background-color: rgba(0, 0, 0, 0.644);
     width: 80%;
-    height: 90%;
+    height: 95%;
     border-radius: 20px;
     flex-direction: column;
     display: flex;
     align-items: center;
+    backdrop-filter: blur(2px);
     
 }
 
@@ -37,7 +39,6 @@
 }
 
 .container-titulo {
-    background-color: blueviolet;
     justify-content: center;
     width: fit-content;
     display: flex;
@@ -48,38 +49,40 @@
 
 
 .container-central{
-    background-color: blue;
     width: 80%;
-    height: 68%;
+    height: 75%;
     display: flex;
     margin-top: 4vh;
 }
 .container-esquerdo {
-    background-color: aliceblue;
     width: 40%;
     align-items: center;
     display: flex;
     flex-direction: column;
-    
+    padding-top: 4vh;
 }
 
 .container-direito {
-    background-color: aquamarine;
     width: 60%;
-    justify-content: center;
     display: flex;
+    padding-top: 4vh;
+    flex-direction: column;
+    align-items: center;
 }
 
 .texto-style {
     font-family: 'Lato', Arial, Helvetica, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
+    color: white;
+    overflow-y: hidden;
 }
 
 #sortear_texto{
-    margin-top: 5vh;
-    color: black;
+    margin-top: 2vh;
+    color: rgb(255, 255, 255);
     font-size: 20px;
+    margin-left: 20vw;
 }
 
 #logo_nenhum_clube {
@@ -87,4 +90,44 @@
     width: 50%;
     height: 70%;
 
+}
+
+#input_time {
+    border-color: white;
+    width: 15vw;
+    height: 5vh;
+    padding-left: 10px;
+    margin-top: 6vh;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+
+}
+#input_time::placeholder
+ {
+    color: white;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#btn_pesquisa {
+    border: none;
+    width: 6vw;
+    height: 4vh;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-bottom: 2px solid white;
+    margin-top: 4vh;
+    background-color: transparent;
+    padding-bottom: 5px;
+
+}
+
+#btn_pesquisa:hover {
+    cursor: pointer;
+    border-color: white;
+    
 }

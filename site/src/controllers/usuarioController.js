@@ -97,8 +97,57 @@ function cadastrar(req, res) {
     }
 }
 
+function atualizarTime(req, res) {
+    var fk_Clube = req.body.fk_ClubeServer;
+    var id_user = req.body.id_UserServer;
+        usuarioModel.atualizarTime(fk_Clube, id_user)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email e/ou senha inválido(s)");
+                       
+                        
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo login e senha!");
+                        res.redirect("/login?mensagem=Email já cadastrado!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
+function puxarDados(req, res) {
+    var id_user = req.body.id_UserServer;
+        usuarioModel.puxarDados(id_user)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+}
+
 module.exports = {
     entrar,
     cadastrar,
-    listar
+    listar,
+    atualizarTime,
+    puxarDados
 }
